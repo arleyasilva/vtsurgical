@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>VTSurgical - Sistema de Transmissão Cirúrgica</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #f5f7fa;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: #222;
+      overflow-x: hidden;
+    }
+
+    /* ====== CABEÇALHO ====== */
+    header {
+      background: linear-gradient(90deg, #0d47a1, #1976d2);
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    header nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    header nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.3s;
+    }
+
+    header nav a:hover {
+      opacity: 0.7;
+    }
+
+    .ia-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .ia-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+      background-color: {{ '#00c853' if ia_enabled else '#d32f2f' }};
+      box-shadow: 0 0 10px {{ '#00e676' if ia_enabled else '#ef5350' }};
+    }
+
+    /* ====== CONTEÚDO PRINCIPAL ====== */
+    .container {
+      max-width: 960px;
+      margin: 40px auto;
+      text-align: center;
+    }
+
+    .video-container {
+      background-color: #0b1a2d;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    }
+
+    .video-stream {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .status {
+      margin-top: 15px;
+      font-size: 16px;
+    }
+
+    .status .ok { color: #00c853; font-weight: bold; }
+    .status .alert { color: #ff9800; font-weight: bold; }
+
+    #toggleIA {
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 28px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 25px;
+      transition: background 0.3s ease, transform 0.1s ease;
+    }
+    #toggleIA:hover { background-color: #2196f3; transform: scale(1.03); }
+
+    /* ====== PAINEL LATERAL ====== */
+    .side-panel {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 260px;
+      height: 100%;
+      background: #e3f2fd;
+      box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 18px;
+      border-left: 3px solid #1976d2;
+    }
+
+    .panel-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #0d47a1;
+      border-bottom: 1px solid #90caf9;
+      padding-bottom: 6px;
+    }
+
+    .panel-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      color: #0d47a1;
+      background: #ffffff;
+      border-radius: 6px;
+      padding: 6px 10px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 15px 0;
+      font-size: 13px;
+      color: #1565c0;
+      background: #e3f2fd;
+      border-top: 1px solid #bbdefb;
+    }
+
+    /* Toast */
+    #toast {
+      visibility: hidden;
+      min-width: 250px;
+      background-color: #323232;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 14px;
+      position: fixed;
+      z-index: 9999;
+      right: 290px;
+      bottom: 30px;
+      font-size: 14px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+      opacity: 0;
+      transition: opacity 0.6s, bottom 0.6s;
+    }
+    #toast.show { visibility: visible; opacity: 1; bottom: 50px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🩺 <strong>VTSurgical</strong> - Sistema de Transmissão Cirúrgica</h1>
+    <nav>
+      <div class="ia-status">
+        <div class="ia-dot"></div>
+        {{ 'IA Ativa' if ia_enabled else 'IA Desativada' }}
+      </div>
+      <a href="{{ url_for('config') }}">⚙️ Configurações</a>
+      <a href="{{ url_for('logout') }}">🚪 Sair ({{ session['username'] }})</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="video-container">
+      <img id="videoStream" src="{{ url_for('video_feed') }}" class="video-stream" alt="Transmissão de Vídeo">
+    </div>
+
+    <div class="status">
+      {% if segmentation_model %}
+        <span class="ok">✅ IA carregada e pronta!</span>
+      {% else %}
+        <span class="alert">⚠️ Modelo de IA não carregado (.h5 ausente).</span>
+      {% endif %}
+      <br>
+      <span style="font-size:14px;color:#444;">
+        Câmera: <strong>{{ config['CAMERA_WIDTH'] }}x{{ config['CAMERA_HEIGHT'] }}</strong> @ <strong>{{ config['CAMERA_FPS'] }}</strong> FPS
+      </span>
+    </div>
+
+    <button id="toggleIA">🧠 {{ 'Desativar IA' if ia_enabled else 'Ativar IA' }}</button>
+  </div>
+
+  <!-- Painel lateral -->
+  <aside class="side-panel">
+    <div class="panel-title">📊 Status Técnico</div>
+    <div class="panel-item"><span>Usuário</span><span>{{ session['username'] }}</span></div>
+    <div class="panel-item"><span>IA</span><span id="iaStatus">{{ 'Ativa' if ia_enabled else 'Inativa' }}</span></div>
+    <div class="panel-item"><span>Resolução</span><span>{{ config['CAMERA_WIDTH'] }}x{{ config['CAMERA_HEIGHT'] }}</span></div>
+    <div class="panel-item"><span>FPS</span><span id="fpsValue">{{ config['CAMERA_FPS'] }}</span></div>
+    <div class="panel-item"><span>CPU</span><span id="cpuUsage">--%</span></div>
+    <div class="panel-item"><span>Temp. Sistema</span><span id="tempValue">-- °C</span></div>
+    <div class="panel-item"><span>IP</span><span>{{ config['IP_BIND'] }}</span></div>
+  </aside>
+
+  <footer>
+    © 2025 VTSurgical | Desenvolvido por Árley Alves da Silva – Analista de Sistemas
+  </footer>
+
+  <div id="toast"></div>
+
+  <script>
+    // Toast
+    function showToast(msg, color = "#323232") {
+      const toast = document.getElementById("toast");
+      toast.style.backgroundColor = color;
+      toast.textContent = msg;
+      toast.className = "show";
+      setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 4000);
+    }
+
+    // Alternar IA
+    document.getElementById("toggleIA").addEventListener("click", async () => {
+      try {
+        const res = await fetch("/toggle_ia", { method: "POST" });
+        const data = await res.json();
+        if (data.message) {
+          showToast(data.message, data.ia_enabled ? "#00c853" : "#f57c00");
+          setTimeout(() => location.reload(), 1200);
+        } else {
+          showToast("⚠️ Resposta inesperada do servidor.", "#d32f2f");
+        }
+      } catch (err) {
+        showToast("❌ Erro ao alternar IA: " + err, "#d32f2f");
+      }
+    });
+
+    // Atualizar status técnico
+    async function atualizarStatus() {
+      try {
+        const res = await fetch("/status_info");
+        const data = await res.json();
+        document.getElementById("cpuUsage").textContent = data.cpu + "%";
+        document.getElementById("tempValue").textContent = data.temp + " °C";
+        document.getElementById("fpsValue").textContent = data.fps;
+      } catch (e) {
+        console.warn("Falha ao atualizar status:", e);
+      }
+    }
+    setInterval(atualizarStatus, 5000);
+    atualizarStatus();
+  </script>
+</body>
+</html>

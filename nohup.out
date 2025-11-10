@@ -1,0 +1,148 @@
+2025-11-09 14:24:11.596400: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-11-09 14:24:13.973990: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+>> ERRO: Não foi possível carregar o modelo de IA. O stream continuará sem processamento. Detalhe: [Errno 2] Unable to synchronously open file (unable to open file: name = 'seu_modelo_segmentacao.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Servidor Flask iniciado em http://0.0.0.0:5000
+ * Serving Flask app 'webstream_linux'
+ * Debug mode: off
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+[ WARN:0@3.221] global cap_v4l.cpp:914 open VIDEOIO(V4L2:/dev/video0): can't open camera by index
+[ WARN:0@3.221] global cap.cpp:478 open VIDEOIO(V4L2): backend is generally available but can't be used to capture by index
+terminate called without an active exception
+2025-11-09 14:25:42.255221: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-11-09 14:25:44.625026: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+>> ERRO: Não foi possível carregar o modelo de IA. O stream continuará sem processamento. Detalhe: [Errno 2] Unable to synchronously open file (unable to open file: name = 'seu_modelo_segmentacao.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Servidor Flask iniciado em http://0.0.0.0:5000
+ * Serving Flask app 'webstream_linux'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.234:5000
+[33mPress CTRL+C to quit[0m
+2025-11-09 14:29:50.449423: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-11-09 14:29:52.867096: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-11-09 14:29:53.423753: E external/local_xla/xla/stream_executor/cuda/cuda_platform.cc:51] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+[ WARN:0@4.100] global cap_v4l.cpp:914 open VIDEOIO(V4L2:/dev/video0): can't open camera by index
+[ WARN:0@4.100] global cap.cpp:478 open VIDEOIO(V4L2): backend is generally available but can't be used to capture by index
+[ WARN:0@4.101] global cap_v4l.cpp:914 open VIDEOIO(V4L2:/dev/video0): can't open camera by index
+>> Modelo de Segmentação (Poligonamento) carregado com sucesso!
+Servidor Flask iniciado em http://0.0.0.0:5000
+Aviso: Tentativa falhou no índice 0 (Backend V4L2). Tentando sem backend forçado...
+ * Serving Flask app 'webstream_linux'
+ * Debug mode: off
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+[ERROR:0@4.101] global obsensor_uvc_stream_channel.cpp:163 getStreamChannelGroup Camera index out of range
+terminate called without an active exception
+2025-11-09 14:30:04.870714: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-11-09 14:30:07.309909: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-11-09 14:30:07.868100: E external/local_xla/xla/stream_executor/cuda/cuda_platform.cc:51] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+[ WARN:0@4.136] global cap_v4l.cpp:914 open VIDEOIO(V4L2:/dev/video0): can't open camera by index
+[ WARN:0@4.136] global cap.cpp:478 open VIDEOIO(V4L2): backend is generally available but can't be used to capture by index
+[ WARN:0@4.136] global cap_v4l.cpp:914 open VIDEOIO(V4L2:/dev/video0): can't open camera by index
+>> Modelo de Segmentação (Poligonamento) carregado com sucesso!
+Servidor Flask iniciado em http://0.0.0.0:5000
+Aviso: Tentativa falhou no índice 0 (Backend V4L2). Tentando sem backend forçado...
+ * Serving Flask app 'webstream_linux'
+ * Debug mode: off
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+[ERROR:0@4.137] global obsensor_uvc_stream_channel.cpp:163 getStreamChannelGroup Camera index out of range
+Erro: Não foi possível abrir a câmera no índice 0.
+Erro: Não foi possível abrir a câmera. O thread de leitura não iniciará.
+2025-11-09 14:32:17.537760: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-11-09 14:32:23.974638: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-11-09 14:32:25.434421: E external/local_xla/xla/stream_executor/cuda/cuda_platform.cc:51] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+>> Modelo de Segmentação (Poligonamento) carregado com sucesso!
+Servidor Flask iniciado em http://0.0.0.0:5000
+ * Serving Flask app 'webstream_linux'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.234:5000
+[33mPress CTRL+C to quit[0m
+192.168.0.111 - - [09/Nov/2025 14:32:59] "GET /config HTTP/1.1" 200 -
+192.168.0.111 - - [09/Nov/2025 14:32:59] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+192.168.0.111 - - [09/Nov/2025 14:32:59] "[36mGET /static/js/config.js HTTP/1.1[0m" 304 -
+192.168.0.111 - - [09/Nov/2025 14:33:04] "POST /config HTTP/1.1" 200 -
+>> Tentando iniciar o servidor...
+2025-11-09 14:33:11.100756: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-11-09 14:33:13.491696: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-11-09 14:33:14.042135: E external/local_xla/xla/stream_executor/cuda/cuda_platform.cc:51] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+>> Modelo de Segmentação (Poligonamento) carregado com sucesso!
+Servidor Flask iniciado em http://0.0.0.0:5000
+ * Serving Flask app 'webstream_linux'
+ * Debug mode: off
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+terminate called without an active exception
+2025-11-09 14:33:28.785016: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-11-09 14:33:31.165317: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-11-09 14:33:31.709215: E external/local_xla/xla/stream_executor/cuda/cuda_platform.cc:51] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+>> Modelo de Segmentação (Poligonamento) carregado com sucesso!
+Servidor Flask iniciado em http://0.0.0.0:5000
+ * Serving Flask app 'webstream_linux'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.234:5000
+[33mPress CTRL+C to quit[0m
+192.168.0.111 - - [09/Nov/2025 14:33:38] "GET /config HTTP/1.1" 200 -
+192.168.0.111 - - [09/Nov/2025 14:33:38] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+192.168.0.111 - - [09/Nov/2025 14:33:38] "[36mGET /static/js/config.js HTTP/1.1[0m" 304 -
+192.168.0.111 - - [09/Nov/2025 14:33:40] "GET /index HTTP/1.1" 200 -
+192.168.0.111 - - [09/Nov/2025 14:33:40] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+192.168.0.111 - - [09/Nov/2025 14:33:40] "GET /video_feed HTTP/1.1" 200 -
+2025-11-09 14:37:14.629785: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-11-09 14:37:17.893111: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-11-09 14:37:18.606178: E external/local_xla/xla/stream_executor/cuda/cuda_platform.cc:51] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+>> Modelo de Segmentação (Poligonamento) carregado com sucesso!
+Servidor Flask iniciado em http://0.0.0.0:5000
+ * Serving Flask app 'webstream_linux'
+ * Debug mode: off
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+[ WARN:0@5.503] global cap_v4l.cpp:914 open VIDEOIO(V4L2:/dev/video0): can't open camera by index
+[ WARN:0@5.503] global cap.cpp:478 open VIDEOIO(V4L2): backend is generally available but can't be used to capture by index
+terminate called without an active exception
+192.168.0.111 - - [09/Nov/2025 14:57:32] "GET /index HTTP/1.1" 200 -
+192.168.0.111 - - [09/Nov/2025 14:57:32] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+192.168.0.111 - - [09/Nov/2025 14:57:32] "GET /video_feed HTTP/1.1" 200 -
+192.168.0.111 - - [09/Nov/2025 14:57:35] "GET /index HTTP/1.1" 200 -
+192.168.0.111 - - [09/Nov/2025 14:57:35] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+192.168.0.111 - - [09/Nov/2025 14:57:35] "GET /video_feed HTTP/1.1" 200 -
+192.168.0.111 - - [09/Nov/2025 14:57:49] "GET /config HTTP/1.1" 200 -
+192.168.0.111 - - [09/Nov/2025 14:57:49] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+192.168.0.111 - - [09/Nov/2025 14:57:49] "[36mGET /static/js/config.js HTTP/1.1[0m" 304 -
+192.168.0.111 - - [09/Nov/2025 14:57:57] "POST /config HTTP/1.1" 200 -
+>> Servidor iniciado em primeiro plano (FOREGROUND). Use CTRL+C para sair.
+2025-11-09 14:57:59.086424: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+192.168.0.111 - - [09/Nov/2025 14:58:00] "GET /config HTTP/1.1" 200 -
+192.168.0.111 - - [09/Nov/2025 14:58:00] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+192.168.0.111 - - [09/Nov/2025 14:58:00] "[36mGET /static/js/config.js HTTP/1.1[0m" 304 -
+2025-11-09 14:58:01.451416: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-11-09 14:58:01.789702: E external/local_xla/xla/stream_executor/cuda/cuda_platform.cc:51] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+>> TensorFlow configurado para usar EXCLUSIVAMENTE CPU.
+>> Modelo de Segmentação (Poligonamento) carregado com sucesso!
+Servidor Flask iniciado em http://0.0.0.0:5001
+ * Serving Flask app 'webstream_linux'
+ * Debug mode: off
+Address already in use
+Port 5001 is in use by another program. Either identify and stop that program, or start the server with a different port.
+terminate called without an active exception
+./stream.sh, linha 22: 49584 Abortado                "$PYTHON_BIN" webstream_linux.py
+2025-11-09 14:58:03.440794: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-11-09 14:58:05.793219: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-11-09 14:58:06.131919: E external/local_xla/xla/stream_executor/cuda/cuda_platform.cc:51] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+>> TensorFlow configurado para usar EXCLUSIVAMENTE CPU.
+>> Modelo de Segmentação (Poligonamento) carregado com sucesso!
+Servidor Flask iniciado em http://0.0.0.0:5001
+ * Serving Flask app 'webstream_linux'
+ * Debug mode: off
+Address already in use
+Port 5001 is in use by another program. Either identify and stop that program, or start the server with a different port.
+terminate called without an active exception
+./stream.sh, linha 25: 49602 Abortado                "$PYTHON_BIN" webstream_linux.py --port 5001

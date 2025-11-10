@@ -1,0 +1,138 @@
+/* ================================== */
+/* ESTILOS DE LOGIN E FORMULÁRIOS */
+/* ================================== */
+
+body { 
+    font-family: 'Inter', sans-serif; 
+    background-color: #f0f0f0; 
+    margin: 0; 
+    padding: 0; 
+}
+.login-box { 
+    background-color: #fff; 
+    padding: 40px; 
+    border-radius: 12px; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15); 
+    text-align: center; 
+}
+h2 { 
+    color: #003366; 
+    font-size: 1.75rem; 
+    margin-bottom: 25px; 
+    font-weight: 700; 
+}
+.input-group { 
+    margin-bottom: 20px; 
+    text-align: left; 
+}
+.input-group label { 
+    display: block; 
+    margin-bottom: 8px; 
+    font-weight: 500; 
+    color: #333; 
+}
+.input-group input { 
+    width: 100%; 
+    padding: 12px; 
+    border: 1px solid #ccc; 
+    border-radius: 6px; 
+    box-sizing: border-box; 
+    font-size: 1rem; 
+}
+.btn-login { 
+    width: 100%; 
+    padding: 12px; 
+    background-color: #003366; 
+    color: white;
+    border: none; 
+    border-radius: 6px; 
+    font-size: 1.1rem; 
+    cursor: pointer; 
+    transition: background-color 0.3s;
+}
+.btn-login:hover { 
+    background-color: #004488;
+}
+.error-message { 
+    color: #d9534f; 
+    margin-top: 15px; 
+    font-weight: 500;
+}
+
+/* ================================== */
+/* CSS DE LAYOUT GERAL E VÍDEO (CORREÇÃO DA ESTÉTICA NO INDEX/CONFIG) */
+/* ================================== */
+
+/* ⚠️ CENTRALIZAÇÃO E CONTEÚDO PRINCIPAL */
+.container { 
+    padding: 30px; 
+    max-width: 1200px; /* Limite a largura para centralizar */
+    margin-left: auto;
+    margin-right: auto; /* Centraliza o container */
+}
+
+/* Estilos do Cabeçalho */
+.header { 
+    background-color: #003366;
+    color: white; 
+    padding: 15px 30px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+}
+.header h1 { 
+    font-size: 1.5rem; 
+    font-weight: 600; 
+    margin: 0; 
+}
+.header a { 
+    color: #f0f0f0; 
+    text-decoration: none; 
+    margin-left: 20px;
+    transition: color 0.3s; 
+}
+.header a:hover { 
+    color: #ffffff; 
+}
+
+/* Estilos de Vídeo (Para Redução e Centralização) */
+.video-container { 
+    background-color: #1a1a1a; 
+    border-radius: 8px; 
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+    margin-bottom: 20px; 
+    
+    /* ⚠️ CHAVE PARA REDUÇÃO */
+    max-width: 80vw; 
+    width: 650px; /* Largura Fixo ideal */
+    margin-left: auto;
+    margin-right: auto; /* Centraliza o container de vídeo */
+}
+.video-stream { 
+    width: 100%; 
+    height: auto; 
+    display: block; 
+}
+
+/* Estilos de Cards (Página Configurações) */
+.card {
+    background-color: white; 
+    padding: 25px; 
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+    margin-bottom: 20px;
+}
+.card h3 {
+    font-size: 1.25rem; 
+    font-weight: 600; 
+    color: #003366; 
+    margin-bottom: 15px; 
+    border-bottom: 1px solid #eee; 
+    padding-bottom: 10px;
+}
+.btn-save { padding: 10px 20px; border-radius: 4px; border: none; cursor: pointer; transition: background-color 0.3s; color: white; }
+.alert { padding: 15px; border-radius: 4px; margin-bottom: 20px; font-weight: 500; }
+.alert-error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+.alert-info { background-color: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
