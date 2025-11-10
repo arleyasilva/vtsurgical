@@ -1,0 +1,20 @@
+# 🩺 VTSurgical - Arquivos locais e sensíveis
+
+# Configurações específicas de cada estação
+config.json
+
+# Logs locais
+logs/
+*.log
+
+# Ambiente virtual Python
+.venv/
+__pycache__/
+
+# Modelos de IA grandes (mantidos localmente)
+*.h5
+*.hdf5
+
+# Backups e arquivos temporários
+*.tmp
+*.bak
